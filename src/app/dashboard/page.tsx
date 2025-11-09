@@ -1,5 +1,6 @@
 // app/dashboard/page.tsx
 import { createServerSupabase } from "@/lib/supabase-server"; // path may differ if you’re not using @ alias
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
@@ -25,9 +26,11 @@ export default async function DashboardPage() {
 
       {/* Example future features */}
       <div className="mt-6 space-y-3">
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-md">
-          Create New Quiz
-        </button>
+        <Link href="/create-session">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+            Create New Quiz
+          </button>
+        </Link>
         <button className="bg-green-600 text-white px-4 py-2 rounded-md">
           View Existing Sessions
         </button>
